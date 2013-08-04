@@ -1,0 +1,226 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #f1f1f1;
+}
+
+/*------------------------------------*\
+    $Cube General
+\*------------------------------------*/
+
+.wrap {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -100px 0 0 -100px;
+	perspective: 800px;
+	perspective-origin: 50% 100px;
+}
+
+.cube {
+	width: 200px;
+	position: relative;
+	transform-style: preserve-3d;
+}
+
+.cube div {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	background-color: rgba(255,255,255,0.95);
+	border: 1px solid #ccc;
+}
+
+.cube .ball {
+	width: 26px;
+	height: 26px;
+	display: block;
+	float: left;
+	border-radius: 50%;
+	background-color: #000;
+}
+
+
+/*------------------------------------*\
+    $Cube 3D Faces
+\*------------------------------------*/
+
+.six {
+	transform: translateZ(-100px) rotateY(180deg);
+}
+
+.three {
+	transform: rotateY(-270deg) translateX(100px);
+	transform-origin: top right;
+}
+
+.four {
+	transform: rotateY(270deg) translateX(-100px);
+	transform-origin: center left;
+}
+
+.two {
+	transform: rotateX(-90deg) translateY(-100px);
+	transform-origin: top center;
+}
+
+.five {
+	transform: rotateX(90deg) translateY(100px);
+	transform-origin: bottom center;
+}
+
+.one {
+	transform: translateZ(100px);
+}
+
+
+
+/*------------------------------------*\
+    $Animation
+\*------------------------------------*/
+
+@keyframes spin {
+	from { transform: rotateY(0) rotateX(0) rotateZ(0); }
+	to { transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg); }
+}
+
+.cube {
+	animation: spin 5s infinite linear;
+}
+
+
+
+/*------------------------------------*\
+    $Balls
+\*------------------------------------*/
+
+.one .ball {
+	top: 87px;
+	right: 87px;
+	position: absolute;
+}
+
+.two .ball:nth-child(1) {
+	top: 40px;
+	left: 40px;
+	position: absolute;
+}
+
+.two .ball:nth-child(2) {
+	bottom: 40px;
+	right: 40px;
+	position: absolute;
+}
+
+.three .ball:nth-child(1) {
+	top: 30px;
+	left: 30px;
+	position: absolute;
+}
+
+.three .ball:nth-child(2) {
+	top: 87px;
+	left: 87px;
+	position: absolute;
+}
+
+.three .ball:nth-child(3) {
+	bottom: 30px;
+	right: 30px;
+	position: absolute;
+}
+
+.four .ball:nth-child(1) {
+	top: 40px;
+	left: 40px;
+	position: absolute;
+}
+
+.four .ball:nth-child(2) {
+	top: 40px;
+	right: 40px;
+	position: absolute;
+}
+
+.four .ball:nth-child(3) {
+	bottom: 40px;
+	left: 40px;
+	position: absolute;
+}
+
+.four .ball:nth-child(4) {
+	bottom: 40px;
+	right: 40px;
+	position: absolute;
+}
+
+.five .ball:nth-child(1) {
+	top: 30px;
+	left: 30px;
+	position: absolute;
+}
+
+.five .ball:nth-child(2) {
+	top: 30px;
+	right: 30px;
+	position: absolute;
+}
+
+.five .ball:nth-child(3) {
+	bottom: 30px;
+	left: 30px;
+	position: absolute;
+}
+
+.five .ball:nth-child(4) {
+	bottom: 30px;
+	right: 30px;
+	position: absolute;
+}
+
+.five .ball:nth-child(5) {
+	top: 87px;
+	left: 87px;
+	position: absolute;
+}
+
+.six .ball:nth-child(1) {
+	top: 30px;
+	left: 40px;
+	position: absolute;
+}
+
+.six .ball:nth-child(2) {
+	top: 30px;
+	right: 40px;
+	position: absolute;
+}
+
+.six .ball:nth-child(3) {
+	bottom: 30px;
+	left: 40px;
+	position: absolute;
+}
+
+.six .ball:nth-child(4) {
+	bottom: 30px;
+	right: 40px;
+	position: absolute;
+}
+
+.six .ball:nth-child(5) {
+	top: 87px;
+	right: 40px;
+	position: absolute;
+}
+
+.six .ball:nth-child(6) {
+	top: 87px;
+	left: 40px;
+	position: absolute;
+}
